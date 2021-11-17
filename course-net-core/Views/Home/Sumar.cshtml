@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Página para sumar";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Introduce dos numeros para sumar, pulse el botón y realice una suma.</p>
+
+<form asp-controller="Home" asp-action="add" method="post">
+
+    <span>Número1 : </span> <input id="num1" type="text" name="num1" /> <br /><br />
+    <span>Número2 : </span> <input id="num2" type="text" name="num2" /> <br /><br />
+    <input id="Submit1" type="submit" value="Sumar" />
+    <input id="resultado" type="text" name="resultado" value="Resultado: @ViewBag.SumResult" style="margin-left:30px;" disabled/>
+</form>
+
