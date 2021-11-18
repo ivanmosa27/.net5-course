@@ -12,6 +12,12 @@ namespace course_net_core.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("sumNumbers")]
+        [HttpGet]
+        public int prueba(int number1, int number2){
+            return number1+number2;
+        }
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -32,6 +38,7 @@ namespace course_net_core.Controllers
             ViewBag.SumResult = result.ToString();
             return View("Sumar");
         }
+        
         public IActionResult Privacy()
         {
             return View();
@@ -46,6 +53,5 @@ namespace course_net_core.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-       
     }
 }
